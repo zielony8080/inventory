@@ -4,7 +4,7 @@
     <array>
         <dict>
             <key>product</key>
-            <string>opona</string>
+            <string>Product 1</string>
             <key>quantity</key>
             <string>5</string>
             <key>unitNetPrice</key>
@@ -12,7 +12,7 @@
         </dict>
         <dict>
             <key>product</key>
-            <string>deska</string>
+            <string>Product 2</string>
             <key>quantity</key>
             <string>100</string>
             <key>unitNetPrice</key>
@@ -20,7 +20,7 @@
         </dict>
         <dict>
             <key>product</key>
-            <string>cegła</string>
+            <string>Product 3</string>
             <key>quantity</key>
             <string>25</string>
             <key>unitNetPrice</key>

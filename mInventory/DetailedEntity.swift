@@ -32,7 +32,7 @@ extension Product : DetailedEntity {
 }
 
 extension Stock : DetailedEntity {
-    var textLabel: String { return product?.name ?? ""}
+    var textLabel: String { return product?.name ?? "x"}
     var detailTextLabel: String { return "Total: \(quantity ?? 0), reserved: \(reserved ?? 0)" }
 }
 

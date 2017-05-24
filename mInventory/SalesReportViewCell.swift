@@ -26,9 +26,9 @@ class SalesReportViewCell: UITableViewCell {
             let stock = salesOrderPosition.stock!
             let product = stock.product!
 
-            documentLabel.text = "\(invoice.number)"
-            customerLabel.text = "\(customer.name)"
-            productLabel.text = "\(product.name)"
+            documentLabel.text = "\(invoice.number!)"
+            customerLabel.text = "\(customer.name!)"
+            productLabel.text = "\(product.name!)"
             valueLabel.text = "\(PriceService.format(price: salesInvoicePosition.netValue?.stringValue))"
         }
     }

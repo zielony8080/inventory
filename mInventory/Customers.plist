@@ -4,7 +4,7 @@
 <array>
     <dict>
         <key>name</key>
-        <string>J Transfer</string>
+        <string>Customer 1</string>
         <key>address</key>
         <string>Poświęcka 17a/17</string>
         <key>termOfPayment</key>
@@ -12,7 +12,7 @@
     </dict>
     <dict>
         <key>name</key>
-        <string>Bud EX</string>
+        <string>Customer 2</string>
         <key>address</key>
         <string>Kwiatowa 5</string>
         <key>termOfPayment</key>
@@ -20,7 +20,7 @@
     </dict>
     <dict>
         <key>name</key>
-        <string>Transbud</string>
+        <string>Customer 3</string>
         <key>address</key>
         <string>Prusa 80A</string>
         <key>termOfPayment</key>

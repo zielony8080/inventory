@@ -57,6 +57,7 @@ class SalesReportFilterController: UITableViewController {
     func search() {
         let productViewController =  storyboard!.instantiateViewController(withIdentifier: "SalesReportResultController") as! SalesReportResultController
         productViewController.customer = customer
+        productViewController.product = product
         productViewController.modalPresentationStyle = .popover
         productViewController.modalTransitionStyle = .coverVertical
         
