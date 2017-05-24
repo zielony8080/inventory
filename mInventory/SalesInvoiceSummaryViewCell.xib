@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="157" id="cZu-d2-GX6" customClass="SalesInvoiceSummaryViewCell" customModule="mInventory" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cZu-d2-GX6" id="S17-TS-1SM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVR-ax-trq">
+                        <rect key="frame" x="5" y="5" width="310" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Net value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bw8-rv-iCB">
+                        <rect key="frame" x="20" y="34" width="73.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMZ-Pe-aBA">
+                        <rect key="frame" x="20" y="53.5" width="73.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gross value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLY-XK-tTF">
+                        <rect key="frame" x="20" y="73" width="73.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="netValueSummary" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqY-L7-k5b">
+                        <rect key="frame" x="93.5" y="34" width="221.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="taxValueSummary" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAF-Bf-MTj">
+                        <rect key="frame" x="93.5" y="53.5" width="221.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="grossValueSummary" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRa-7J-TPs">
+                        <rect key="frame" x="93.5" y="73" width="221.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jqY-L7-k5b" firstAttribute="baseline" secondItem="bw8-rv-iCB" secondAttribute="baseline" id="3qu-bp-RGj"/>
+                    <constraint firstItem="bw8-rv-iCB" firstAttribute="leading" secondItem="S17-TS-1SM" secondAttribute="leading" constant="20" symbolic="YES" id="4fH-py-AF0"/>
+                    <constraint firstItem="HLY-XK-tTF" firstAttribute="leading" secondItem="S17-TS-1SM" secondAttribute="leading" constant="20" symbolic="YES" id="6r5-ec-0ox"/>
+                    <constraint firstAttribute="trailing" secondItem="fVR-ax-trq" secondAttribute="trailing" constant="5" id="7xT-y2-tbb"/>
+                    <constraint firstItem="bw8-rv-iCB" firstAttribute="top" secondItem="fVR-ax-trq" secondAttribute="bottom" constant="8" symbolic="YES" id="8PC-hv-Y6O"/>
+                    <constraint firstItem="HLY-XK-tTF" firstAttribute="width" secondItem="OMZ-Pe-aBA" secondAttribute="width" id="8mV-zy-9oN"/>
+                    <constraint firstItem="jqY-L7-k5b" firstAttribute="leading" secondItem="bw8-rv-iCB" secondAttribute="trailing" id="BVG-Jb-Mcs"/>
+                    <constraint firstItem="LRa-7J-TPs" firstAttribute="leading" secondItem="HLY-XK-tTF" secondAttribute="trailing" id="G4b-fE-IaW"/>
+                    <constraint firstAttribute="trailing" secondItem="NAF-Bf-MTj" secondAttribute="trailing" constant="5" id="J7y-QO-194"/>
+                    <constraint firstItem="OMZ-Pe-aBA" firstAttribute="top" secondItem="bw8-rv-iCB" secondAttribute="bottom" constant="5" id="JQm-ts-GHT"/>
+                    <constraint firstItem="fVR-ax-trq" firstAttribute="leading" secondItem="S17-TS-1SM" secondAttribute="leading" constant="5" id="Jsj-nR-WnM"/>
+                    <constraint firstItem="OMZ-Pe-aBA" firstAttribute="leading" secondItem="S17-TS-1SM" secondAttribute="leading" constant="20" symbolic="YES" id="N2y-YZ-LSX"/>
+                    <constraint firstItem="HLY-XK-tTF" firstAttribute="top" secondItem="OMZ-Pe-aBA" secondAttribute="bottom" constant="5" id="Npw-B5-hrJ"/>
+                    <constraint firstAttribute="trailing" secondItem="jqY-L7-k5b" secondAttribute="trailing" constant="5" id="Vys-eL-MvG"/>
+                    <constraint firstAttribute="trailing" secondItem="LRa-7J-TPs" secondAttribute="trailing" constant="5" id="YH2-49-938"/>
+                    <constraint firstItem="bw8-rv-iCB" firstAttribute="width" secondItem="S17-TS-1SM" secondAttribute="width" multiplier="0.23" id="aCb-FZ-S1z"/>
+                    <constraint firstItem="NAF-Bf-MTj" firstAttribute="baseline" secondItem="OMZ-Pe-aBA" secondAttribute="baseline" id="eAG-zV-XzD"/>
+                    <constraint firstItem="NAF-Bf-MTj" firstAttribute="leading" secondItem="OMZ-Pe-aBA" secondAttribute="trailing" id="foc-pM-JqR"/>
+                    <constraint firstItem="OMZ-Pe-aBA" firstAttribute="width" secondItem="bw8-rv-iCB" secondAttribute="width" id="lte-Qj-7Nm"/>
+                    <constraint firstItem="fVR-ax-trq" firstAttribute="top" secondItem="S17-TS-1SM" secondAttribute="top" constant="5" id="q2k-uN-Fdo"/>
+                    <constraint firstItem="LRa-7J-TPs" firstAttribute="baseline" secondItem="HLY-XK-tTF" secondAttribute="baseline" id="vJ6-n8-v60"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="grossValueSummaryLabel" destination="LRa-7J-TPs" id="08g-to-ZB6"/>
+                <outlet property="netValueSummaryLabel" destination="jqY-L7-k5b" id="gLt-UN-Azq"/>
+                <outlet property="positionLabel" destination="fVR-ax-trq" id="kDT-MD-53Z"/>
+                <outlet property="taxValueSummaryLable" destination="NAF-Bf-MTj" id="6bc-hp-Zpu"/>
+            </connections>
+            <point key="canvasLocation" x="-60" y="-31"/>
+        </tableViewCell>
+    </objects>
+</document>

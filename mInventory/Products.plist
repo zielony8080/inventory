@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>opona</string>
+		<key>tax</key>
+		<string>22%</string>
+		<key>supplier</key>
+		<string>B12</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>deska</string>
+		<key>tax</key>
+		<string>7%</string>
+		<key>supplier</key>
+		<string>B12</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>cegła</string>
+		<key>tax</key>
+		<string>free</string>
+		<key>supplier</key>
+		<string>PilarBud</string>
+	</dict>
+</array>
+</plist>

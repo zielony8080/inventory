@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1217" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Customer" representedClassName=".Customer" syncable="YES">
+        <attribute name="address" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="termOfPayment" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="packingSlips" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PackingSlip" inverseName="customer" inverseEntity="PackingSlip" syncable="YES"/>
+        <relationship name="salesInvoices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SalesInvoice" inverseName="customer" inverseEntity="SalesInvoice" syncable="YES"/>
+        <relationship name="salesOrders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SalesOrder" inverseName="customer" inverseEntity="SalesOrder" syncable="YES"/>
+    </entity>
+    <entity name="PackingSlip" representedClassName=".PackingSlip" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="packingSlips" inverseEntity="Customer" syncable="YES"/>
+        <relationship name="positions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PackingSlipPosition" inverseName="packingSlip" inverseEntity="PackingSlipPosition" syncable="YES"/>
+        <relationship name="salesOrder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SalesOrder" inverseName="packingSlips" inverseEntity="SalesOrder" syncable="YES"/>
+    </entity>
+    <entity name="PackingSlipPosition" representedClassName=".PackingSlipPosition" syncable="YES">
+        <attribute name="quantity" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="packingSlip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PackingSlip" inverseName="positions" inverseEntity="PackingSlip" syncable="YES"/>
+        <relationship name="salesInvoicePosition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SalesInvoicePosition" inverseName="packingSlipPosition" inverseEntity="SalesInvoicePosition" syncable="YES"/>
+        <relationship name="salesOrderPosition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SalesOrderPosition" inverseName="packingSlipPositions" inverseEntity="SalesOrderPosition" syncable="YES"/>
+    </entity>
+    <entity name="Product" representedClassName=".Product" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="stock" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stock" inverseName="product" inverseEntity="Stock" syncable="YES"/>
+        <relationship name="supplier" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Supplier" inverseName="products" inverseEntity="Supplier" syncable="YES"/>
+        <relationship name="tax" maxCount="1" deletionRule="Nullify" destinationEntity="Tax" inverseName="products" inverseEntity="Tax" syncable="YES"/>
+    </entity>
+    <entity name="SalesInvoice" representedClassName=".SalesInvoice" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="issueDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="paymentDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="salesInvoices" inverseEntity="Customer" syncable="YES"/>
+        <relationship name="positions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SalesInvoicePosition" inverseName="invoice" inverseEntity="SalesInvoicePosition" syncable="YES"/>
+        <relationship name="summaries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SalesInvoiceSummary" inverseName="invoice" inverseEntity="SalesInvoiceSummary" syncable="YES"/>
+    </entity>
+    <entity name="SalesInvoicePosition" representedClassName=".SalesInvoicePosition" syncable="YES">
+        <attribute name="grossValue" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="netValue" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="positionNo" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="taxValue" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="unitNetValue" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="invoice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SalesInvoice" inverseName="positions" inverseEntity="SalesInvoice" syncable="YES"/>
+        <relationship name="packingSlipPosition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PackingSlipPosition" inverseName="salesInvoicePosition" inverseEntity="PackingSlipPosition" syncable="YES"/>
+    </entity>
+    <entity name="SalesInvoiceSummary" representedClassName=".SalesInvoiceSummary" syncable="YES">
+        <attribute name="grossValue" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="netValue" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="taxValue" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="invoice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SalesInvoice" inverseName="summaries" inverseEntity="SalesInvoice" syncable="YES"/>
+        <relationship name="tax" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tax" inverseName="summaries" inverseEntity="Tax" syncable="YES"/>
+    </entity>
+    <entity name="SalesOrder" representedClassName=".SalesOrder" syncable="YES">
+        <attribute name="active" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="created" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="number" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="customer" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="salesOrders" inverseEntity="Customer" syncable="YES"/>
+        <relationship name="packingSlips" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PackingSlip" inverseName="salesOrder" inverseEntity="PackingSlip" syncable="YES"/>
+        <relationship name="positions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SalesOrderPosition" inverseName="salesOrder" inverseEntity="SalesOrderPosition" syncable="YES"/>
+    </entity>
+    <entity name="SalesOrderPosition" representedClassName=".SalesOrderPosition" syncable="YES">
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="quantity" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="totalNetPrice" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="unitNetPrice" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="packingSlipPositions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PackingSlipPosition" inverseName="salesOrderPosition" inverseEntity="PackingSlipPosition" syncable="YES"/>
+        <relationship name="salesOrder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SalesOrder" inverseName="positions" inverseEntity="SalesOrder" syncable="YES"/>
+        <relationship name="stock" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stock" inverseName="saleOrderPositions" inverseEntity="Stock" syncable="YES"/>
+    </entity>
+    <entity name="Stock" representedClassName=".Stock" syncable="YES">
+        <attribute name="quantity" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="reserved" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="unitNetPrice" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="stock" inverseEntity="Product" syncable="YES"/>
+        <relationship name="saleOrderPositions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SalesOrderPosition" inverseName="stock" inverseEntity="SalesOrderPosition" syncable="YES"/>
+    </entity>
+    <entity name="Supplier" representedClassName=".Supplier" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="supplier" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="Tax" representedClassName=".Tax" syncable="YES">
+        <attribute name="factor" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="products" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="tax" inverseEntity="Product" syncable="YES"/>
+        <relationship name="summaries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SalesInvoiceSummary" inverseName="tax" inverseEntity="SalesInvoiceSummary" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Customer" positionX="178" positionY="-42" width="128" height="135"/>
+        <element name="PackingSlip" positionX="0" positionY="-18" width="128" height="150"/>
+        <element name="PackingSlipPosition" positionX="9" positionY="-9" width="128" height="105"/>
+        <element name="Product" positionX="-155" positionY="-162" width="128" height="105"/>
+        <element name="SalesInvoice" positionX="0" positionY="-18" width="128" height="165"/>
+        <element name="SalesInvoicePosition" positionX="9" positionY="-9" width="128" height="165"/>
+        <element name="SalesInvoiceSummary" positionX="18" positionY="0" width="128" height="120"/>
+        <element name="SalesOrder" positionX="378" positionY="-0" width="128" height="150"/>
+        <element name="SalesOrderPosition" positionX="97" positionY="198" width="128" height="150"/>
+        <element name="Stock" positionX="0" positionY="-18" width="128" height="120"/>
+        <element name="Supplier" positionX="-200" positionY="165" width="128" height="90"/>
+        <element name="Tax" positionX="151" positionY="-162" width="128" height="105"/>
+    </elements>
+</model>

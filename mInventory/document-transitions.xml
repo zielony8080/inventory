@@ -1,0 +1,54 @@
+<transitions>
+
+    <state name="new" document="SalesOrder" >
+        <transition name="approved" action="reserveProducts" condition="validateReservation" failureTransition="rejected" />
+        <transition name="canceled" />
+    </state>
+    <state name="approved" document="SalesOrder" >
+        <transition name="in progress"  />
+        <transition name="canceled" />
+    </state>
+    <state name="in progress" document="SalesOrder" >
+        <transition name="finished" />
+    </state>
+
+
+
+    <state name="new" document="PackingSlip" >
+        <attribute name="editable" value="true" />
+        
+        <transition name="approved"  />
+        <transition name="canceled" />
+    </state>
+    <state name="approved" document="PackingSlip" >
+        <attribute name="editable" value="false" />
+
+        <transition name="in progress" action="releaseProducts" />
+        <transition name="canceled" />
+    </state>
+    <state name="in progress" document="PackingSlip" >
+        <attribute name="editable" value="false" />
+
+        <transition name="finished" />
+    </state>
+
+
+
+
+    <state name="new" document="SalesInvoice" >
+        <transition name="finished" action="finishInvoice"  />
+        <transition name="canceled" />
+    </state>
+
+</transitions>
+
+
+
+
+
+
+
+
+
+
+

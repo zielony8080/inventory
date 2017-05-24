@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="118" id="KGk-i7-Jjw" customClass="PackingSlipPositionViewCell" customModule="mInventory" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="351" height="118"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="351" height="117.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJZ-Qo-wya">
+                        <rect key="frame" x="20" y="10" width="311" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Jj-e0-nCW">
+                        <rect key="frame" x="20" y="36" width="311" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oUW-7b-QMv">
+                        <rect key="frame" x="18" y="58" width="315" height="31"/>
+                        <connections>
+                            <action selector="onSliderChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="6bl-XG-bbB"/>
+                        </connections>
+                    </slider>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="BJZ-Qo-wya" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="58a-L4-SOc"/>
+                    <constraint firstAttribute="trailing" secondItem="oUW-7b-QMv" secondAttribute="trailing" constant="20" symbolic="YES" id="5XG-TU-Tws"/>
+                    <constraint firstItem="5Jj-e0-nCW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="9nx-tL-8F9"/>
+                    <constraint firstItem="BJZ-Qo-wya" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="PGA-0T-2bh"/>
+                    <constraint firstItem="oUW-7b-QMv" firstAttribute="top" secondItem="5Jj-e0-nCW" secondAttribute="bottom" constant="8" symbolic="YES" id="Qho-PP-bR7"/>
+                    <constraint firstItem="oUW-7b-QMv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="XLY-wm-cPy"/>
+                    <constraint firstItem="5Jj-e0-nCW" firstAttribute="top" secondItem="BJZ-Qo-wya" secondAttribute="bottom" constant="5" id="ejR-5E-E7o"/>
+                    <constraint firstAttribute="trailing" secondItem="5Jj-e0-nCW" secondAttribute="trailing" constant="20" symbolic="YES" id="keW-co-fJK"/>
+                    <constraint firstAttribute="trailing" secondItem="BJZ-Qo-wya" secondAttribute="trailing" constant="20" symbolic="YES" id="oeT-eD-BKa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="productLabel" destination="BJZ-Qo-wya" id="a4x-C4-j9E"/>
+                <outlet property="quantitySlider" destination="oUW-7b-QMv" id="PH5-nF-uTV"/>
+                <outlet property="summaryLabel" destination="5Jj-e0-nCW" id="WRa-OW-Att"/>
+            </connections>
+            <point key="canvasLocation" x="49.5" y="0.0"/>
+        </tableViewCell>
+    </objects>
+</document>

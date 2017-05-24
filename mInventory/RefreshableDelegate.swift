@@ -1,0 +1,13 @@
+//
+//  RefreshableDelegate.swift
+//  mInventory
+//
+//  Created by Łukasz Zielony on 12.05.2017.
+//  Copyright © 2017 Lukasz Zielony. All rights reserved.
+//
+
+import Foundation
+
+protocol RefreshableDelegate {
+    func refresh()
+}
